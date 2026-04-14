@@ -21,7 +21,6 @@
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        /* Configuración de Hero: Texto sobre fondo sólido para legibilidad del 100% */
         .hero-section {
             background-color: #ffffff;
             position: relative;
@@ -42,7 +41,6 @@
         .nav-link:hover {
             color: var(--accent-pink);
         }
-        /* Decoración de la imagen del banner */
         .banner-img-container {
             position: relative;
         }
@@ -82,7 +80,6 @@
                 </div>
             </div>
         </div>
-        <!-- Menú Móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl">
             <a href="#inicio" class="block font-semibold" onclick="toggleMenu()">Inicio</a>
             <a href="#servicios" class="block font-semibold" onclick="toggleMenu()">Servicios</a>
@@ -95,8 +92,6 @@
     <section id="inicio" class="hero-section min-h-[90vh] flex items-center pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                
-                <!-- Texto Informativo: Legibilidad 100% -->
                 <div class="md:w-1/2 text-center md:text-left py-12 z-10">
                     <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight">
                         Tu belleza empieza por <span class="text-pink-600 italic">tus manos.</span>
@@ -105,7 +100,7 @@
                         Especialistas en manicura y pedicura en Zaragoza. Disfruta de un acabado impecable y profesional con los mejores productos del mercado.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="https://wa.me/34694469401" class="bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl transition-all transform hover:-translate-y-1 text-center">Reservar Cita</a>
+                        <a href="#contacto" class="bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl transition-all transform hover:-translate-y-1 text-center">Reservar Cita</a>
                         <a href="#servicios" class="border-2 border-pink-600 text-pink-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-pink-50 transition-all text-center">Nuestros Servicios</a>
                     </div>
                     <div class="mt-10 flex items-center justify-center md:justify-start gap-4">
@@ -115,8 +110,6 @@
                         <span class="text-gray-900 font-bold">4.2 (138 reseñas reales)</span>
                     </div>
                 </div>
-
-                <!-- Imagen del Banner -->
                 <div class="md:w-1/2 w-full banner-img-container">
                     <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80" 
                          alt="Manicura profesional con uñas pintadas" 
@@ -171,7 +164,6 @@
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-lg"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Manicura roja clásica"></div>
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-lg"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Detalle de uñas decoradas"></div>
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-lg"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Uñas elegantes"></div>
-                <!-- Cuarta imagen ajustada: Se añade object-cover para centrar y ampliar correctamente -->
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-lg">
                     <img src="https://png.pngtree.com/thumb_back/fh260/background/20250611/pngtree-perfect-pink-manicure-and-pedicure-on-woman-s-hands-feet-image_17416642.jpg" 
                          alt="Sesión de pedicura profesional" 
@@ -210,11 +202,11 @@
                 </div>
                 <div class="bg-gray-50 p-10 rounded-[40px] shadow-sm">
                     <h3 class="text-2xl font-bold mb-8">Pide tu Cita</h3>
-                    <form onsubmit="event.preventDefault(); alert('Solicitud recibida. Te llamaremos en breve.');" class="space-y-5">
-                        <input type="text" placeholder="Tu nombre completo" class="w-full p-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-pink-500" required>
-                        <input type="tel" placeholder="Número de teléfono" class="w-full p-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-pink-500" required>
-                        <textarea placeholder="¿Qué servicio te gustaría?" rows="4" class="w-full p-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-pink-500"></textarea>
-                        <button class="w-full bg-pink-600 text-white font-bold py-5 rounded-2xl hover:bg-pink-700 transition-all text-xl shadow-lg">Confirmar Solicitud</button>
+                    <form id="appointmentForm" onsubmit="sendWhatsApp(event)" class="space-y-5">
+                        <input type="text" id="formName" placeholder="Tu nombre completo" class="w-full p-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-pink-500" required>
+                        <input type="tel" id="formPhone" placeholder="Número de teléfono" class="w-full p-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-pink-500" required>
+                        <textarea id="formMessage" placeholder="¿Qué servicio te gustaría?" rows="4" class="w-full p-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-pink-500"></textarea>
+                        <button type="submit" class="w-full bg-pink-600 text-white font-bold py-5 rounded-2xl hover:bg-pink-700 transition-all text-xl shadow-lg">Confirmar Solicitud</button>
                     </form>
                 </div>
             </div>
@@ -261,6 +253,23 @@
         function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
         function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
+
+        // Función para enviar formulario por WhatsApp
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const message = document.getElementById('formMessage').value;
+            
+            const phoneNumber = "34694469401"; // Formato internacional
+            const text = `Hola Lady's Uñas, me gustaría pedir una cita:\n\n*Nombre:* ${name}\n*Teléfono:* ${phone}\n*Servicio:* ${message}`;
+            
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+            
+            // Abrir en nueva pestaña
+            window.open(whatsappUrl, '_blank');
+        }
     </script>
 </body>
 </html>
