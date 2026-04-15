@@ -146,7 +146,6 @@
                     <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-pink-600 shadow-sm group-hover:bg-pink-600 group-hover:text-white transition-all">
                         <i class="fas fa-gem text-2xl"></i>
                     </div>
-                    <!-- Nombre del servicio actualizado -->
                     <h3 class="text-2xl font-bold mb-4">Uñas Acrílicas y Gel</h3>
                     <p class="text-gray-600">Especialistas en extensiones de gel y acrílico con acabados naturales.</p>
                 </div>
@@ -233,21 +232,40 @@
 
     <!-- Modales Legales -->
     <div id="modalAviso" class="modal"><div class="bg-white text-gray-800 max-w-xl mx-auto mt-20 p-10 rounded-3xl relative">
-        <button onclick="closeModal('modalAviso')" class="absolute top-4 right-6 text-3xl">&times;</button>
+        <button onclick="closeModal('modalAviso')" class="absolute top-4 right-6 text-3xl hover:text-pink-600">&times;</button>
         <h3 class="font-bold text-2xl mb-6 border-b pb-2">Aviso Legal</h3>
-        <p class="text-sm leading-relaxed">Lady's Uñas - Calle de las Delicias, 31, 50017 Zaragoza. NIF: [X]. Este sitio web tiene carácter informativo sobre servicios estéticos.</p>
+        <div class="text-sm leading-relaxed space-y-4">
+            <p>En cumplimiento con el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico, se exponen los siguientes datos identificativos:</p>
+            <ul class="list-none space-y-1">
+                <li><strong>Titular:</strong> Johanna Álvarez Lozano</li>
+                <li><strong>NIF:</strong> B56800188</li>
+                <li><strong>Dirección:</strong> C. de las Delicias, 31, 50017 Zaragoza</li>
+                <li><strong>Teléfono:</strong> 694 46 94 01</li>
+            </ul>
+            <p>El acceso y uso de este sitio web atribuye la condición de USUARIO, que acepta los términos aquí reflejados.</p>
+        </div>
     </div></div>
     
     <div id="modalPrivacidad" class="modal"><div class="bg-white text-gray-800 max-w-xl mx-auto mt-20 p-10 rounded-3xl relative">
-        <button onclick="closeModal('modalPrivacidad')" class="absolute top-4 right-6 text-3xl">&times;</button>
-        <h3 class="font-bold text-2xl mb-6 border-b pb-2">Privacidad</h3>
-        <p class="text-sm leading-relaxed">Tus datos personales son tratados con absoluta confidencialidad para la gestión de citas y no serán compartidos con terceros.</p>
+        <button onclick="closeModal('modalPrivacidad')" class="absolute top-4 right-6 text-3xl hover:text-pink-600">&times;</button>
+        <h3 class="font-bold text-2xl mb-6 border-b pb-2">Política de Privacidad</h3>
+        <div class="text-sm leading-relaxed space-y-4">
+            <p>De acuerdo con el RGPD y la LOPDGDD, <strong>Johanna Álvarez Lozano</strong> informa que los datos recogidos a través del formulario de contacto se utilizarán exclusivamente para la gestión de citas y comunicaciones comerciales solicitadas por el usuario.</p>
+            <p>El usuario podrá ejercer sus derechos de acceso, rectificación, supresión y portabilidad de sus datos enviando una solicitud a nuestra dirección en C. de las Delicias, 31, Zaragoza.</p>
+        </div>
     </div></div>
 
     <div id="modalCookies" class="modal"><div class="bg-white text-gray-800 max-w-xl mx-auto mt-20 p-10 rounded-3xl relative">
-        <button onclick="closeModal('modalCookies')" class="absolute top-4 right-6 text-3xl">&times;</button>
+        <button onclick="closeModal('modalCookies')" class="absolute top-4 right-6 text-3xl hover:text-pink-600">&times;</button>
         <h3 class="font-bold text-2xl mb-6 border-b pb-2">Política de Cookies</h3>
-        <p class="text-sm leading-relaxed">Usamos cookies técnicas para garantizar que la web funcione correctamente y para análisis anónimo de tráfico.</p>
+        <div class="text-sm leading-relaxed space-y-4">
+            <p>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación y analizar el tráfico de forma anónima.</p>
+            <ul class="list-disc pl-5">
+                <li><strong>Cookies técnicas:</strong> Necesarias para el funcionamiento de la web.</li>
+                <li><strong>Cookies de análisis:</strong> Google Analytics para estadísticas de visitas.</li>
+            </ul>
+            <p>Puede configurar su navegador para restringir o eliminar las cookies en cualquier momento.</p>
+        </div>
     </div></div>
 
     <script>
@@ -255,19 +273,14 @@
         function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
 
-        // Función para enviar formulario por WhatsApp
         function sendWhatsApp(event) {
             event.preventDefault();
-            
             const name = document.getElementById('formName').value;
             const phone = document.getElementById('formPhone').value;
             const message = document.getElementById('formMessage').value;
-            
-            const phoneNumber = "34694469401"; // Formato internacional correcto
+            const phoneNumber = "34694469401";
             const text = `Hola Lady's Uñas, me gustaría pedir una cita:\n\n*Nombre:* ${name}\n*Teléfono:* ${phone}\n*Servicio:* ${message}`;
-            
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-            
             window.open(whatsappUrl, '_blank');
         }
     </script>
