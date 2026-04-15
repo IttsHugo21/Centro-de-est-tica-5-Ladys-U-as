@@ -66,12 +66,18 @@
                 <div class="flex-shrink-0">
                     <span class="text-2xl font-serif font-bold text-pink-600 italic">Lady's Uñas</span>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8 font-semibold">
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-baseline space-x-8 font-semibold mr-8">
                         <a href="#inicio" class="nav-link transition">Inicio</a>
                         <a href="#servicios" class="nav-link transition">Servicios</a>
                         <a href="#galeria" class="nav-link transition">Galería</a>
                         <a href="#contacto" class="nav-link transition">Contacto</a>
+                    </div>
+                    <div class="flex items-center space-x-4 border-l pl-8 border-gray-100">
+                        <!-- Icono Instagram Navegación -->
+                        <a href="https://www.instagram.com/lady.s_unas/?hl=es" target="_blank" class="text-pink-600 text-xl hover:scale-110 transition-transform">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                         <a href="tel:694469401" class="bg-pink-600 text-white px-5 py-2 rounded-full hover:bg-pink-700 transition shadow-lg">Llamar Ahora</a>
                     </div>
                 </div>
@@ -80,11 +86,14 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl text-center">
             <a href="#inicio" class="block font-semibold" onclick="toggleMenu()">Inicio</a>
             <a href="#servicios" class="block font-semibold" onclick="toggleMenu()">Servicios</a>
             <a href="#galeria" class="block font-semibold" onclick="toggleMenu()">Galería</a>
             <a href="#contacto" class="block font-semibold" onclick="toggleMenu()">Contacto</a>
+            <a href="https://www.instagram.com/lady.s_unas/?hl=es" target="_blank" class="inline-block text-pink-600 text-2xl px-4 py-2">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
     </nav>
 
@@ -195,6 +204,13 @@
                                 <p>Sábados: 9:00 - 14:00</p>
                             </div>
                         </div>
+                        <!-- Instagram en Sección Visítanos -->
+                        <div class="flex items-center gap-6">
+                            <div class="text-pink-600 text-2xl"><i class="fab fa-instagram"></i></div>
+                            <a href="https://www.instagram.com/lady.s_unas/?hl=es" target="_blank" class="text-lg font-semibold hover:text-pink-600 transition underline underline-offset-4 decoration-pink-200">
+                                @lady.s_unas
+                            </a>
+                        </div>
                     </div>
                     <div class="mt-12 h-64 rounded-3xl overflow-hidden shadow-inner border border-gray-100">
                         <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.4285883713437!2d-0.9080644!3d41.6464539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914ddf46a2a0d%3A0x63346e9104084f70!2sC.%20de%20las%20Delicias%2C%2031%2C%2050017%20Zaragoza!5e0!3m2!1ses!2ses!4v1711380000000!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
@@ -216,12 +232,18 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <span class="text-3xl font-serif font-bold text-pink-500 italic mb-8 block">Lady's Uñas</span>
+            <span class="text-3xl font-serif font-bold text-pink-500 italic mb-4 block">Lady's Uñas</span>
+            
+            <!-- Instagram Footer -->
+            <a href="https://www.instagram.com/lady.s_unas/?hl=es" target="_blank" class="text-2xl text-pink-500 hover:text-pink-400 transition mb-8 inline-block">
+                <i class="fab fa-instagram"></i>
+            </a>
+
             <div class="text-gray-400 mb-8 max-w-md mx-auto space-y-1">
                 <p>Lunes a viernes: 10:00 - 19:00</p>
                 <p>Sábados: 9:00 - 14:00</p>
             </div>
-            <div class="flex justify-center gap-8 text-sm uppercase tracking-widest text-gray-500 mb-8 font-bold">
+            <div class="flex justify-center flex-wrap gap-8 text-sm uppercase tracking-widest text-gray-500 mb-8 font-bold">
                 <button onclick="openModal('modalAviso')" class="hover:text-white transition">Aviso Legal</button>
                 <button onclick="openModal('modalPrivacidad')" class="hover:text-white transition">Privacidad</button>
                 <button onclick="openModal('modalCookies')" class="hover:text-white transition">Cookies</button>
